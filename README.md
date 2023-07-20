@@ -1,5 +1,5 @@
 # ActiveDirectory
-<h1>Active Directory With 1000+ Users Tutorial</h1>
+<h1>Active Directory Home Lab With 1000+ Users</h1>
 
 <h2>Description</h2>
 This project consists of a simple tutorial for setting up a basic Active Directory Home Lab. It walks the user through each step of setting up a Windows 2019 Server virtual machine on their desktop through VirtualBox 7. Virtual machines are extremely useful and can be set up very quickly. In this tutorial, I use multiple virtual machines to simulate an Active Directory environment that you would see in a work environment with 1000+ users. The first virtual machine, the Windows 2019 Server, will be acting as the domain controller for the environment. We will need to connect the Domain Controller to the internet and to the internal network along with the Windows 10 machine. DHCP will automatically configure the IP address on the external-facing NIC, but we will need to give the internal-facing NIC the correct network configurations.
@@ -19,13 +19,23 @@ Click this [link](https://github.com/JaedonMallory/Windows10VM) to watch the Win
 - <b>Windows 10</b>
 - <b>Windows 2019 Server Desktop Environment</b>
 
+<h2>Known Issues:</h2>
+
+Error: If you find a problem installing the Windows 2019 Server ISO while creating the virtual machine, opt to choose the ISO until after you create the instance. <br/>
+<img src="https://i.imgur.com/Uq4H5c5.png" height="80%" width="80%" alt="Figure1"/>
+
+Instead of choosing the ISO file at the beginning or in Figure 1, choose the ISO file once the virtual machine is made shown in Figure 2. <br/>
+<img src="https://i.imgur.com/DJzBDOZ.png" height="80%" width="80%" alt="Figure1"/>
+<img src="https://i.imgur.com/Zp7nPXv.png" height="80%" width="80%" alt="Figure2"/>
+
 <h2>Program walk-through:</h2>
 
-<p align="center">
+<p align="left">
 1. After installing VirtualBox and downloading the Windows 2019 Server ISO, you want to set up the Windows 2019 Server Virtual Machine. It will be acting as our Domain Controller. The whole process is relatively the same as any other virtual machine setup, so I linked my previous Windows 10 Virtual Machine tutorial above. Create the Administrator Password after installing. You can keep it simple to remember it. <br/>
-<img src="https://i.imgur.com/vRoTIkd.png="80%" width="80%" alt="Windows2019ServerVirtualMachine"/>
-<br />
-<br />
+ 
+<img src="https://i.imgur.com/vRoTIkd.png" height="80%" width="80%" alt="Windows2019ServerVirtualMachine"/>
+<br/>
+<br/>
 2. The next process is finding and configuring your internal and external networks. This is an easy process. Type Network Status into the Search bar in the bottom left on the taskbar. Scroll down until you see Change Adapter Options. This will bring you to your two networks.  <br/>
 <img src="https://i.imgur.com/yPGOBVz.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
 <img src="https://i.imgur.com/DDMsb0y.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
