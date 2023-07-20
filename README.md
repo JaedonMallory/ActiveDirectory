@@ -22,16 +22,19 @@ Click this [link](https://github.com/JaedonMallory/Windows10VM) to watch the Win
 <h2>Program walk-through:</h2>
 
 <p align="center">
-1. Once you have downloaded the Windows 10 ISO file and VirtualBox, Click New in VirtualBox. This prompt will ask for you to name your new Virtual Machine and ask for the ISO file you want to use.: <br/>
-<img src="https://i.imgur.com/IhLub4X.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+1. After installing VirtualBox and downloading the Windows 2019 Server ISO, you want to set up the Windows 2019 Server Virtual Machine. It will be acting as our Domain Controller. The whole process is relatively the same as any other virtual machine setup, so I linked my previous Windows 10 Virtual Machine tutorial above. Create the Administrator Password after installing. You can keep it simple to remember it. <br/>
+<img src="https://i.imgur.com/vRoTIkd.png="80%" width="80%" alt="Windows2019ServerVirtualMachine"/>
 <br />
 <br />
-2. Select the Windows 10 Version you want. In this case, we are going to use Windows 10 Home:  <br/>
-<img src="https://i.imgur.com/puARyM4.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+2. The next process is finding and configuring your internal and external networks. This is an easy process. Type Network Status into the Search bar in the bottom left on the taskbar. Scroll down until you see Change Adapter Options. This will bring you to your two networks.  <br/>
+<img src="https://i.imgur.com/yPGOBVz.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
+<img src="https://i.imgur.com/DDMsb0y.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
+<img src="https://i.imgur.com/MPyoc1s.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
 <br />
 <br />
-3. Click the checkbox to install Guest Additions for better performance. Make sure all other checks are green to proceed. <br/>
-<img src="https://i.imgur.com/euwqOKp.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+3. I have already named mine both to make it easier to find them. However, you can tell the difference based on their network connectivity and the IP addresses already assigned to them. The external network is already working and DHCP has already assigned a working IP address to it. The internal NIC has no connectivity and an automatically assigned IP address because the DHCP could not provide one. <br/>
+<img src="https://i.imgur.com/2025M7i.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
+<img src="https://i.imgur.com/wJwQELY.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
 <br />
 <br />
 4. Choose how much RAM you will allocate to the virtual machine. Microsoft states that a 64x version of Windows 10 needs a minimum of 2 GB or 2048 MB. <br/>
