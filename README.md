@@ -43,21 +43,31 @@ Instead of choosing the ISO file at the beginning or in Figure 1, choose the ISO
 <img src="https://i.imgur.com/MPyoc1s.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
 <br />
 <br />
-3. I have already named mine both to make it easier to find them. However, you can tell the difference based on their network connectivity and the IP addresses already assigned to them. The external network is already working and DHCP has already assigned a working IP address to it. The internal NIC has no connectivity and an automatically assigned IP address because the DHCP could not provide one. <br/>
+3. You can tell the difference based on their network connectivity and the IP addresses already assigned to them. The external network is already working and DHCP has already assigned a working IP address to it. The internal NIC has no connectivity and an automatically assigned IP address because the DHCP could not provide one. I have already named both to make them easier to find.  <br/>
 <img src="https://i.imgur.com/2025M7i.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
 <img src="https://i.imgur.com/wJwQELY.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
 <br />
 <br />
-4. Choose how much RAM you will allocate to the virtual machine. Microsoft states that a 64x version of Windows 10 needs a minimum of 2 GB or 2048 MB. <br/>
-<img src="https://i.imgur.com/4oCQQBe.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+4. The next step is to Assign the Internal NIC an IP Address. This is done by right-clicking the Internal network and selecting Properties. In Properties, select Internet Protocol Version 4 and insert the following:<br/>
+- IP Address: 172.16.0.1 (Private IP Address Only Visible on LAN)<br/>
+- Subnet Mask: 255.255.255.0<br/>
+- Default Gateway: You can keep this blank<br/>
+- Preferred DNS server: 127.0.0.1 (We are using this server as the DNS server, so we will use the loopback address 127.0.0.1 to call back on itself)
+<img src="https://i.imgur.com/lMmgRJQ.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br />
 <br />
-5. This step is similar to the previous step. Choose the amount of storage your virtual machine will have access to. Microsoft states that a 64x version of Windows 10 needs a minimum of 20 GB of storage.  <br/>
-<img src="https://i.imgur.com/7W5aHCU.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+5. To make things more organized and easier to remember, rename the Windows Server 2019 machine. I renamed mine "DomainController" to keep things simple. You can get here by searching "About this PC" in the system settings. <br/>
+<img src="https://i.imgur.com/JRjJB8m.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br />
 <br />
-6. Make sure everything is shown as you want it to be. This is the last step before creating the virtual machine.  <br/>
-<img src="https://i.imgur.com/OUoAQng.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+6. At this point, we have created and renamed the Windows 2019 Server virtual machine (DomainController) and configured both the External and Internal NICS. Next, we will create the Domain.  <br/>
+<img src="https://i.imgur.com/U2TW4Z8.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<br />
+<br />
+7. The next step is to create the Domain. Return to the Server Controller and choose Add Roles and Features. This brings you to an installation wizard. Click next until you get to Select Destination Server. Choose the server you want to use to create the Domain (Windows 2019 Server). After you choose the Windows 2019 Server, click next and choose Active Directory Domain Services. <br/>
+<img src="https://i.imgur.com/GZKRm7A.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/n5grEAj.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/ParRv7l.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br />
 <br />
 7. It will take a few minutes to finish installing Windows 10. Once it is done, click through the installer while following the instructions. <br/>
