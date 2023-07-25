@@ -41,40 +41,69 @@ Instead of choosing the ISO file at the beginning or in Figure 1, choose the ISO
 <img src="https://i.imgur.com/yPGOBVz.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
 <img src="https://i.imgur.com/DDMsb0y.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
 <img src="https://i.imgur.com/MPyoc1s.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
-<br />
-<br />
+<br/>
+<br/>
 3. You can tell the difference based on their network connectivity and the IP addresses already assigned to them. The external network is already working and DHCP has already assigned a working IP address to it. The internal NIC has no connectivity and an automatically assigned IP address because the DHCP could not provide one. I have already named both to make them easier to find.  <br/>
 <img src="https://i.imgur.com/2025M7i.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
 <img src="https://i.imgur.com/wJwQELY.png" height="80%" width="80%" alt="Windows2019VirtualMachine"/>
-<br />
-<br />
+<br/>
+<br/>
 4. The next step is to Assign the Internal NIC an IP Address. This is done by right-clicking the Internal network and selecting Properties. In Properties, select Internet Protocol Version 4 and insert the following:<br/>
 - IP Address: 172.16.0.1 (Private IP Address Only Visible on LAN)<br/>
 - Subnet Mask: 255.255.255.0<br/>
 - Default Gateway: You can keep this blank<br/>
 - Preferred DNS server: 127.0.0.1 (We are using this server as the DNS server, so we will use the loopback address 127.0.0.1 to call back on itself)
 <img src="https://i.imgur.com/lMmgRJQ.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
-<br />
-<br />
+<br/>
+<br/>
 5. To make things more organized and easier to remember, rename the Windows Server 2019 machine. I renamed mine "DomainController" to keep things simple. You can get here by searching "About this PC" in the system settings. <br/>
 <img src="https://i.imgur.com/JRjJB8m.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
-<br />
-<br />
+<br/>
+<br/>
 6. At this point, we have created and renamed the Windows 2019 Server virtual machine (DomainController) and configured both the External and Internal NICS. Next, we will create the Domain.  <br/>
 <img src="https://i.imgur.com/U2TW4Z8.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
-<br />
-<br />
-7. The next step is to create the Domain. Return to the Server Controller and choose Add Roles and Features. This brings you to an installation wizard. Click next until you get to Select Destination Server. Choose the server you want to use to create the Domain (Windows 2019 Server). After you choose the Windows 2019 Server, click next and choose Active Directory Domain Services. <br/>
+<br/>
+<br/>
+7. The next step is to create the Domain. Return to the Server Controller and choose Add Roles and Features. This brings you to an installation wizard. Click next until you get to Select Destination Server. Choose the server you want to use to create the Domain (Windows 2019 Server). After you choose the Windows 2019 Server, click next and choose Active Directory Domain Services. This is the last option before clicking through and finalizing the installation. <br/>
 <img src="https://i.imgur.com/GZKRm7A.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <img src="https://i.imgur.com/n5grEAj.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <img src="https://i.imgur.com/ParRv7l.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
-<br />
-<br />
-7. It will take a few minutes to finish installing Windows 10. Once it is done, click through the installer while following the instructions. <br/>
-<img src="https://i.imgur.com/YNsVupa.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
-<br />
-8. That's it! You just installed your first, and hopefully not last, Virtual Machine on VirtualBox! <br/>
-<img src="https://i.imgur.com/z0rMMCl.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/ZN2wXGg.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<br/>
+<br/>
+8. After installing Active Directory Domain Services, we need to create the domain controller. Check the notification on the Server Controller that is shown as the flag in the top right corner. It will ask to promote this server to a domain controller. It will ask for you to name the domain (You can name it anything you want). Then, click next and create an easy-to-remember password for the DSRM password. After creating the password, click "next" until you are at the end and can click "install". It will restart your virtual machine. <br/>
+<img src="https://i.imgur.com/p5HGHHn.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/bqXSWe1.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/N4lICCc.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<br/>
+<br/>
+9. Once the Domain Controller boots back up, sign in and find Active Directory Users and Computers under Windows Administrative Tools. <br/>
+<img src="https://i.imgur.com/B3AEpSg.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<br/>
+<br/>
+10. Find the name you used for the Domain Controller. Mine is mydomain.com. Right-click and select "New" to create a new "Organizational Unit". This will be a new unit for your administrator account. Fill out the user credentials and create a password for the account. <br/>
+<img src="https://i.imgur.com/Xx9DYC0.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>  
+<img src="https://i.imgur.com/7AzlP6v.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/aSeydx4.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/Aj9G5UZ.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>  
+<img src="https://i.imgur.com/fGAmw5g.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<br/>
+<br/>
+11. Under the user we just created, go to Properties and add the user to a new group. You can find groups under the MemberOf tab. I named the group Domain Admins because this will be the group assigned to administrators in this domain. After setting up the group, click apply and sign out of the machine. You can now log into your new user account.<br/>
+<img src="https://i.imgur.com/fLmao0e.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/ekowY6T.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<br/>
+<br/>
+12. Next, we are going to install RAS and NAT on the Domain Controller to allow the Windows 10 Client virtual machine to access the internet through the Domain Controller. This is similar to the Active Directory Domain Services step. However, we are going to install RAS additionally. Again, go to the Server Controller and choose Add Roles and Features. Click through until you can select server roles and check Remote Access. Once checked, click next until you can check Routing. DirectAccess and VPN (RAS) will automatically be checked. After checking Routing and RAS, click until you can begin the installation. <br/>
+<img src="https://i.imgur.com/oCjjVjc.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/eHqxwig.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/5u5riAR.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<br/>
+<br/>
+12. Under the user we just created, go to Properties and add the user to a new group. You can find groups under the MemberOf tab. I named the group Domain Admins because this will be the group assigned to administrators in this domain. <br/>
+<img src="" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<br/>
+<br/>
 </p>
 
 <!--
