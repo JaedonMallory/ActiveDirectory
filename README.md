@@ -112,11 +112,13 @@ Instead of choosing the ISO file at the beginning or in Figure 1, choose the ISO
 <img src="https://i.imgur.com/c2NpnD6.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br/>
 <br/>
-15. Step 15 is creating the scope for the DHCP server. Scroll over to Tools in the Server Controller and click DHCP. It will bring you to the DHCP configurations. Scroll over IPV4 and select New Scope. In this tutorial, I will be naming the scope DHCPScope1. Click next once you name the scope. This brings you to an installation wizard where you can enter the IP range we are going to use for this DHCP server. We will be using 172.16.0.100-172.16.0.200. <br/>
+15. Step 15 is creating the scope for the DHCP server. Scroll over to Tools in the Server Controller and click DHCP. It will bring you to the DHCP configurations. Scroll over IPV4 and select New Scope. In this tutorial, I will be naming the scope DHCPScope1. Click next once you name the scope. This brings you to an installation wizard where you can enter the IP range we are going to use for this DHCP server. We will be using 172.16.0.100-172.16.0.200. Once you have entered the IP range, click next after the Exclusions and Delay screen. We can keep the IP Lease Time at default. 8 days is enough for our case. Continue and Click "Yes" to configure DHCP options. The first configuration is the Router Default Gateway. Configure this to be 172.16.0.1. Make sure to hit Add. The next configuration is the DNS server. We already configured that in a previous step, so we can click next. We aren't using WINS Server, so we can click next. Next, click "Yes" and activate the scope. Finally, scroll back to the DHCP configurations and authorize the DHCP server. IPV4 will also need to be refreshed to show as active. <br/>
 <img src="https://i.imgur.com/pc3vGKI.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <img src="https://i.imgur.com/HIPCldU.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <img src="https://i.imgur.com/qauvnun.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <img src="https://i.imgur.com/PEfyJM1.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/qFv3tz9.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/xvCn80s.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br/>
 <br/>
 </p>
