@@ -100,11 +100,23 @@ Instead of choosing the ISO file at the beginning or in Figure 1, choose the ISO
 <img src="https://i.imgur.com/5u5riAR.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br/>
 <br/>
-12. The next step is to configure NAT on our Domain Controller. Go to Tools in the top right of the Server Controller. Scroll down to Routing and Remote Access. This will bring you to a window where you can configure the server. Right-click the domain controller we have created (Mine is Domain Controller) and choose Configure and Enable Routing and Remote Access. Click next and choose the Network Address Translation (NAT) option. Now, choose the external NIC we named earlier. This will be used to route the Windows 10 Client to the internet through the Domain Controller. Click next and hit install. <br/>
+13. The next step is to configure NAT on our Domain Controller. Go to Tools in the top right of the Server Controller. Scroll down to Routing and Remote Access. This will bring you to a window where you can configure the server. Right-click the domain controller we have created (Mine is Domain Controller) and choose Configure and Enable Routing and Remote Access. Click next and choose the Network Address Translation (NAT) option. Now, choose the external NIC we named earlier. This will be used to route the Windows 10 Client to the internet through the Domain Controller. Click next and hit install. <br/>
 <img src="https://i.imgur.com/EgRkeYU.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <img src="https://i.imgur.com/Kb2Tqjo.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <img src="https://i.imgur.com/sY5BaKi.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <img src="https://i.imgur.com/QW2GlFn.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<br/>
+<br/>
+14. Step 14 is creating a DHCP server in the Domain Controller to assign an IP address to the Windows 10 Client and other clients if you build onto this project. First, start at the Server Controller and go to Add Roles and Features. Click "next" until you find your server roles and install DHCP. After checking DHCP, click next until you install the service. <br/>
+<img src="https://i.imgur.com/vhFuuFz.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/c2NpnD6.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<br/>
+<br/>
+15. Step 15 is creating the scope for the DHCP server. Scroll over to Tools in the Server Controller and click DHCP. It will bring you to the DHCP configurations. Scroll over IPV4 and select New Scope. In this tutorial, I will be naming the scope DHCPScope1. Click next once you name the scope. This brings you to an installation wizard where you can enter the IP range we are going to use for this DHCP server. We will be using 172.16.0.100-172.16.0.200. <br/>
+<img src="https://i.imgur.com/pc3vGKI.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/HIPCldU.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/qauvnun.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/PEfyJM1.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br/>
 <br/>
 </p>
