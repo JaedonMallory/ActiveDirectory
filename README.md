@@ -100,8 +100,11 @@ Instead of choosing the ISO file at the beginning or in Figure 1, choose the ISO
 <img src="https://i.imgur.com/5u5riAR.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br/>
 <br/>
-12. Under the user we just created, go to Properties and add the user to a new group. You can find groups under the MemberOf tab. I named the group Domain Admins because this will be the group assigned to administrators in this domain. <br/>
-<img src="" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+12. The next step is to configure NAT on our Domain Controller. Go to Tools in the top right of the Server Controller. Scroll down to Routing and Remote Access. This will bring you to a window where you can configure the server. Right-click the domain controller we have created (Mine is Domain Controller) and choose Configure and Enable Routing and Remote Access. Click next and choose the Network Address Translation (NAT) option. Now, choose the external NIC we named earlier. This will be used to route the Windows 10 Client to the internet through the Domain Controller. Click next and hit install. <br/>
+<img src="https://i.imgur.com/EgRkeYU.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/Kb2Tqjo.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/sY5BaKi.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/QW2GlFn.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br/>
 <br/>
 </p>
