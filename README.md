@@ -139,9 +139,19 @@ Instead of choosing the ISO file at the beginning or in Figure 1, choose the ISO
 <img src="https://i.imgur.com/kCL4CSv.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br/>
 <br/>
-19. <br/>
-<img src="" height="80%" width="80%" alt="Windows10VirtualMachine"/>
-<img src="" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+19. With the Domain Controller and basically everything set up, we can move on to the Windows 10 Pro Client. If you need help setting up a  Windows 10 Virtual Machine, refer to this [tutorial](https://github.com/JaedonMallory/Windows10VM) (Just choose Pro instead of Home). We also need to change the network settings in VirtualBox on the Client. The change will be from NAT to Internal, as we want the Client to route through the Domain Controller and not the Internet. Next, we can see as we open up the Command Prompt and check the network configuration that the DHCP server and DNS server are working properly. The DHCP is providing the Windows 10 Pro Client with an IP Address, and it is in the range we configured. <br/>
+<img src="https://i.imgur.com/ZngWEYq.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/nNCxwQB.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<br/>
+<br/>
+20. With everything running as it should be, we can finally join the Domain with our Client. This is going to be similar to when we renamed our Domain Controller. First, go into the System Settings and Find About, or type About this PC into the taskbar. Scroll further down than Rename this PC until you get to Rename this PC (advanced). Once you are in System Properties, click Change to rename the computer. Rename the Client to whatever you want (Mine is Client) and type the name of the Domain Controller into the Domain section. (Mine is mydomain.com). Click Ok and a window asking for you to sign in will pop up. Use the original Administrator username and password we created at the beginning. You will then need to restart your Client. <br/>
+<img src="https://i.imgur.com/qqOeP5Y.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/sCxtsc4.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<br/>
+<br/>
+20. Finally, we have our Domain Controller and Client setup. We can see our Client shown in the Active Directory Users and Computers configuration. This allows us to log in as a separate user we created during the PowerShell sequence, or we can log in as our admin account. I ran the whoami and ping commands to show everything is connected and the domain is available to be used.<br/>
+<img src="https://i.imgur.com/eGHVbsm.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/kwkThE4.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br/>
 <br/>
 </p>
