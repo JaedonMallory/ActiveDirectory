@@ -121,7 +121,7 @@ Instead of choosing the ISO file at the beginning or in Figure 1, choose the ISO
 <img src="https://i.imgur.com/xvCn80s.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br/>
 <br/>
-16. The next step is to enable browsing on the server. You shouldn't do this in a live environment, but we are going to download a PowerShell script to bulk create users. Go to the Server Controller and on the left side, you can choose Local Server. In the properties, choose IE Enhanced Security Configuration and turn it off. This allows you to browse using Internet Explorer. Now, we can download our scripts from the ActiveDirectory repository files [link](https://github.com/JaedonMallory/ActiveDirectory). <br/>
+16. The next step is to enable browsing on the server. You shouldn't do this in a live environment, but we are going to download a PowerShell script to bulk create users. Go to the Server Controller and on the left side, you can choose Local Server. In the properties, choose IE Enhanced Security Configuration and turn it off. This allows you to browse using Internet Explorer. Now, we can download our scripts from the ActiveDirectory repository files [link](https://github.com/JaedonMallory/ActiveDirectory). I added notes to the script to give a brief generalization of what the code does. <br/>
 <img src="https://i.imgur.com/e8vNCBy.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br/>
 <br/>
@@ -129,8 +129,18 @@ Instead of choosing the ISO file at the beginning or in Figure 1, choose the ISO
 <img src="https://i.imgur.com/E5n4MP1.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br/>
 <br/>
-18. With PowerShell running, we can open the script by clicking the folder icon called Open Script. In the case of this tutorial, we are going to use Password1 for all user passwords to make the demonstration simple. We could generate 1,000 unique passwords for each user and extract them from a database to simulate real users with real passwords. However, this works as a beginning setup.  <br/>
+18. With PowerShell running, we can open the script by clicking the folder icon called Open Script. In the case of this tutorial, we are going to use Password1 for all user passwords to make the demonstration simple. We could generate 1,000 unique passwords for each user and extract them from a database to simulate real users with real passwords. However, this works as a beginning setup. The script requires Set-ExecutionPolicy to be unrestricted. Additionally, we must change directories to locate the script and run it. Do this by typing C:\Users\(your account username)\(location)\(name of the script). Mine looks like C:\Users\a-jmallory\Downloads\PowerShell Script AD. You can look inside the directory and list out the contents by using the "ls" command to make sure you run the correct script. Finally, run the script. You can either hit the green Run button in the terminal or type out the script name in the command line. Mine looks like .\1_CREATE_USERS.ps1. When it asks to make sure you want to run the script, click Run. Your users will take some time to create, but once you run the script, it will automatically create all of them. <br/>
 <img src="https://i.imgur.com/E5n4MP1.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/EKVqTD1.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/sroWhzN.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/N9kNc3j.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/wsOUXlF.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="https://i.imgur.com/r9v55rg.png" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<br/>
+<br/>
+19. <br/>
+<img src="" height="80%" width="80%" alt="Windows10VirtualMachine"/>
+<img src="" height="80%" width="80%" alt="Windows10VirtualMachine"/>
 <br/>
 <br/>
 </p>
